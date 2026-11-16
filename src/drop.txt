@@ -1,12 +1,12 @@
-# 지엽적이거나 다른 문제와 겹쳐서 숨긴 문제 (지우지 않고 빌드에서만 제외)
+# 다른 문제와 같은 내용을 묻는 중복 문제만 숨김 (지우지 않고 빌드에서만 제외)
+# 학교 PPT·수업 자료 내용은 세부 사항이라도 숨기지 않음
 # 생물
-b01 b03 b08 b09 b10 b11 b15 b16 b18 b19 b20 b21 b25 b29 b30 b33 b36 b37 b39 b40 b42 b47
-y02 y03 y04 y11 y20 y21 y22 y23 y24 y25 y26 y27 y28
-b7_01 b7_05 b7_08 b7_11 bt02 nn12 ge05
+b01 b08 b09 b11 b15 b16 b18 b19 b20 b25 b29 b33 b36 b37 b39 b40 b42 b47
+y02 y03 y11 y20 y21 b7_08 bt02 nn12
 # 화학
-c12 c22 c33 c47 c52 c53 c54 c55 c60 c72 c78 c82 cE4 cE6 cE13 cE14 cH1 cH6 cH11 cn02
-x01 x02 x03 x12 x26 x33 x34 x37 x38 x46 x48 x49 x52 x53 x54
+c52 c53 c60 c72 c78 cE6 cE13 cE14 cH1 cH6 cH11 cn02
+x01 x02 x03 x12 x26 x33 x34 x37 x38 x46 x54
 # 물리
-p06 p31 p32 p33 p34 w03 w22 pE8 pE11 qm21 qm48 qm49 qn01 qn02 qn05 qn06 pw04 pw16 pw17 pw19 pw22 pw28
+p06 w03 w22 qn05 qn06 pw17 pw22
 # 지구과학
-e03 e26 e34 z15 z18 z22 eH6 eE12 sw10 sw11
+e03 z15 z18 z22 eH6 eE12
