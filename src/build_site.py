@@ -3,7 +3,7 @@ HERE=os.path.dirname(os.path.abspath(__file__)); os.chdir(HERE)
 QS=[]
 import figs
 FIG={k:f() for k,f in figs.FIGS.items()}
-for s,f in [('phys','q_phys'),('chem','q_chem'),('bio','q_bio'),('earth','q_earth'),('chem','x_chem'),('bio','x_bio'),(None,'x_ep'),('phys','q_qm'),('phys','s_phys'),('chem','s_chem'),('bio','s_bio'),('earth','s_earth'),(None,'h_all'),('phys','s_pw'),(None,'s_bogi'),('bio','q_bio7'),('bio','s_bio2'),('phys','s_tr'),('phys','s_qn'),('earth','s_kn'),('chem','s_ct'),('chem','s_cb'),('earth','s_sw'),(None,'s_ge'),('chem','s_mx'),('earth','s_c3'),('earth','s_c4'),('earth','s_ox'),('phys','s_ts')]:
+for s,f in [('phys','q_phys'),('chem','q_chem'),('bio','q_bio'),('earth','q_earth'),('chem','x_chem'),('bio','x_bio'),(None,'x_ep'),('phys','q_qm'),('phys','s_phys'),('chem','s_chem'),('bio','s_bio'),('earth','s_earth'),(None,'h_all'),('phys','s_pw'),(None,'s_bogi'),('bio','q_bio7'),('bio','s_bio2'),('phys','s_tr'),('phys','s_qn'),('earth','s_kn'),('chem','s_ct'),('chem','s_cb'),('earth','s_sw'),(None,'s_ge'),('chem','s_mx'),('earth','s_c3'),('earth','s_c4'),('earth','s_ox'),('phys','s_ts'),('chem','s_up_chem'),('bio','s_up_bio')]:
     for q in yaml.safe_load(open(f+'.yaml')):
         if s: q['s']=s
         assert q.get('s') in ('phys','chem','bio','earth'), q['id']
@@ -51,7 +51,7 @@ for s,f in [('phys','q_phys'),('chem','q_chem'),('bio','q_bio'),('earth','q_eart
 CX=yaml.safe_load(open('cx.yaml'))
 for q in QS:
     if q['t']=='mc':
-        if q.get('fix') and q.get('cx'): continue
+        if q.get('cx'): continue
         assert q['id'] in CX and len(CX[q['id']])==len(q['c']), 'cx '+q['id']
         q['cx']=[str(x) for x in CX[q['id']]]
 from mathify import mathify
@@ -100,6 +100,11 @@ SRC={
  'kn':dict(n='지학 학원(KNR) 「성간물질 · 은하」 학습지·필기',short='지학 KNR 학습지',s='earth',ic='📗'),
  'qn':dict(n='물리 양자역학 수업 사진·손필기 (흑체 ~ 양자 컴퓨터)',short='물리 양자 필기',s='phys',ic='📕'),
  's1':dict(n='물리 「다이오드 추가」 PPT (근사 모델·예제)',short='물리 다이오드 추가',s='phys',ic='📕'),
+ 'bt':dict(n='박신학원 「유전자 발현의 조절 2」 내 필기본 (trp 감쇠·lac 정리·진핵 조절 영역)',short='학원 발현조절 2 필기본',s='bio',ic='📒'),
+ 'bj':dict(n='박신학원 「유전자 및 전사」 (영양요구성 돌연변이 · 원핵/진핵 전사 · 스플라이싱)',short='학원 유전자 및 전사',s='bio',ic='📒'),
+ 'co':dict(n='화학 The Origin 「열화학·열역학 문제」 (30문항 · 해설 · 내 풀이)',short='화학 The Origin',s='chem',ic='📙'),
+ 'ch':dict(n='화학 HOMEWORK 「열역학 순환 과정」 (P–V · T–S 그래프 · 내 풀이)',short='화학 HOMEWORK 열역학',s='chem',ic='📙'),
+ 'cn':dict(n='내 필기 · 화학 열역학·열화학 정리 (1법칙 · 엔트로피 · 클라우지우스–클라페이롱 · 반응열)',short='화학 정리 필기',s='chem',ic='📙'),
 }
 IMG={}
 import shutil as _sh
