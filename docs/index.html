@@ -297,7 +297,7 @@ function vHome(){
   <div class="card"><div class="row" style="align-items:flex-start"><div style="font-size:28px;flex:none">⏱️</div><div><b>심화 모의고사</b><div class="sub">고난도 문제 + 서답형 세트로만 구성 · 시간 종료 시 자동 채점</div></div></div><button class="btn" style="margin-top:12px" onclick="go('examSetup')">모의고사 시작</button></div>
   <div class="grid2">
     <button class="card" style="margin:0;text-align:left" onclick="go('ask')"><div style="font-size:24px">💬</div><b>필기에 질문하기</b><div class="sub">개념·공식·차이점</div></button>
-    <button class="card" style="margin:0;text-align:left" onclick="go('wrong')"><div style="font-size:24px">📕</div><b>오답 노트</b><div class="sub">${ST.wrong.length}문제 남음</div></button>
+    <button class="card" style="margin:0;text-align:left" onclick="go('wrong')"><div style="font-size:24px">📕</div><b>오답 노트</b><div class="sub">${ST.wrong.filter(i=>QMAP[i]).length}문제 남음</div></button>
   </div>
   <div class="hint">💡 문제를 풀면 바로 풀이가 나오고, <b>관련 자료</b> 버튼으로 수업 PPT·학습지·내 필기의 해당 페이지를 열어볼 수 있어요. 기록은 이 기기의 브라우저에 저장돼요.</div>`;
   render(h);

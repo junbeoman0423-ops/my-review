@@ -48,6 +48,9 @@ for s,f in [('phys','q_phys'),('chem','q_chem'),('bio','q_bio'),('earth','q_eart
                 if p['t']=='essay': assert p.get('kp'), q['id']
         q['ref']=[str(r) for r in q.get('ref',[])]
         QS.append(q)
+DROP={w for l in open('drop.txt') if not l.startswith('#') for w in l.split()}
+missing=DROP-{q['id'] for q in QS}; assert not missing, missing
+QS=[q for q in QS if q['id'] not in DROP]
 CX=yaml.safe_load(open('cx.yaml'))
 for q in QS:
     if q['t']=='mc':
